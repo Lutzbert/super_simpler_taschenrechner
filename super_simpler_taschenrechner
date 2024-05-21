@@ -1,0 +1,51 @@
+zahl1 = int(input("Bitte gib die erste Zahl ein: "))
+rechenart = input("Bitte gib die Rechenart ein (+, -, *, /): ")
+zahl2 = int(input("Bitte gib die zweite Zahl ein: "))
+
+if rechenart == '+':
+    ergebnis = zahl1 + zahl2
+elif rechenart == '-':
+    ergebnis = zahl1 - zahl2
+elif rechenart == '*':
+    ergebnis = zahl1 * zahl2
+elif rechenart == '/':
+    ergebnis = zahl1 / zahl2
+else:
+    print("Ungültige Rechenart!")
+    ergebnis = None
+
+if ergebnis is not None:
+    print(f"Das Ergebnis von {zahl1} {rechenart} {zahl2} ist {ergebnis}.")
+
+# die nicht langweilige art
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y != 0:
+        return x / y
+    else:
+        return "Division durch Null nicht möglich!"
+
+operations = {
+    '+': add,
+    '-': subtract,
+    '*': multiply,
+    '/': divide
+}
+zahl1 = int(input("Bitte gib die erste Zahl ein: "))
+rechenart = input("Bitte gib die Rechenart ein (+, -, *, /): ")
+zahl2 = int(input("Bitte gib die zweite Zahl ein: "))
+
+if rechenart in operations:
+    ergebnis = operations[rechenart](zahl1, zahl2)
+    print(f"Das Ergebnis von {zahl1} {rechenart} {zahl2} ist {ergebnis}.")
+else:
+    print("Ungültige Rechenart!")
